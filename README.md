@@ -5,9 +5,7 @@
 Our project will be an internet site written in Python (server-side) and JavaScript (client-side).
 The site is providing a comfortable and user-friendly environment for everyone who wants to exchange anything with other users that wants what he offers by using the "trading cycles".
 The site suggest exchanging from various types of items like work shifts, personal items,vouchers and more.
-
-First at home page we can find the tenders that open for registration, by clicking the tender's name, we will 
-
+ 
 First at home page we can find the tenders that open for registration, by clicking the tender's name, we will move to the tender's page, there we can see the items that participants, by clicking Join we can choose the item that we want participant with and after that we will be part of the tender.
 As long as the registration period is not over, the user can choose to exit the tender or replace the item with which he wants to participate with.
 
