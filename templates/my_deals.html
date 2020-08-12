@@ -1,0 +1,35 @@
+{% extends "connected_nav.html" %}
+{% block title %} active tenders for {{login_user['firstName']}} {% endblock %}
+
+{% block hello %} {{login_user['firstName']}} {% endblock %}
+{% block content %}
+
+<div class="container">
+
+  <div class="jumbotron">
+
+    <h1> My previous deals</h1>
+  </div>
+
+  {% for item in items.find({'owner': login_user['email']}) %}
+  {% if item["itemReceived"] != None %}
+  <div class="col-lg-4 col-md-4 col-sm-4">
+    <!--the screen has 12 units -->
+    <div class="thumbnail">
+      <div class="container">
+        <br>
+        <img src="/return-file/{{ items.find_one({ '_id' : item["itemReceived"]})["image"] }}/" width="90" height="90" alt="None">
+        <img src="https://i.ibb.co/vZWZ2qM/image.jpg" width="65" height="65" style="margin:8px;" alt="Exchange">
+        <img src="/return-file/{{item['image']}}/" width="90" height="90" alt="None">
+        <a href="/results/{{ items.find_one({ '_id' : item["itemReceived"]})["inTender"] }}/">move to results</a>
+        <br><br>
+      </div>
+    </div>
+  </div>
+
+  {% endif %}
+  {% endfor %}
+
+</div>
+
+{% endblock%}
