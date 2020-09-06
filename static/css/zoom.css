@@ -26,6 +26,10 @@ button {
   margin: 8px;
 }
 
+img{
+  margin-top: 20px;
+}
+
 /* very small window */
 @media screen and (max-width: 780px){
 .favButton{

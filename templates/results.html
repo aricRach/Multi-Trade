@@ -4,7 +4,7 @@
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/contact-details.css') }}">
 {% endblock %}
 
-{% block title %} {{current_tender['name']}} {% endblock %}
+{% block title %} {{current_tender['name']}} results {% endblock %}
 
 {% block hello %} {{login_user['firstName']}} {% endblock %}
 {% block content %}
@@ -16,7 +16,7 @@
   <div class="jumbotron">
 
     <h1>The results of {{current_tender["name"]}}</h1>
-    <h6>contact management: {{current_tender["owner"]}} </h6>
+    <h6>Tender manager : {{current_tender["owner"]}} </h6>
   </div>
 
   <div class="thumbnail">
@@ -45,11 +45,25 @@
     </div>
   </div>
 
+
+  <div class="container">
+<div class="container">
+  <div class="col-md-6 col-sm-6" >
+    <div class="row">
+      <div class="give">
+      <h3>give</h3>
+      </div>
+      <div class="got">
+      <h3>got</h3>
+    </div>
+    </div>
+</div>
+</div>
+
   {%for i in range (items_arr1|length)%}
 
   <br>
   <div class="col-md-4 col-sm-6">
-    <!--the screen has 12 units -->
     <div class="thumbnail">
       <div class="container">
         <br>

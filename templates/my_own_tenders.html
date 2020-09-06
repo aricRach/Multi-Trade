@@ -10,24 +10,21 @@
 
   <div class="jumbotron">
 
-    <h1> my own tenders</h1>
+    <h1> My own tenders</h1>
+    <p>Here you can manage the tenders that you opened</p>
   </div>
 
   {% for tender in tenders.find({'owner' : login_user['email']}) %}
 
   <div class="col-md-3 col-sm-6">
-    <!--the screen has 12 units -->
     <div class="thumbnail">
-      <!--Adds a border around an element -->
-      <!-- <img src="" alt=""> -->
       <div class="caption">
-        <!--Adds a caption text inside-->
         <h4> {{tender["name"]}} </h4>
 
-        <a href="/out_of_tender/{{tender['_id']}}" id="tender_page"><button type="button" name="enter" class="btn btn-primary">enter</button></a>
+        <a href="/out_of_tender/{{tender['_id']}}" id="tender_page"><button type="button" name="enter" class="btn btn-primary">Enter</button></a>
         {% if tender["isActive"] %}
-        <a href="/edit_tender/{{tender['_id']}}" id="edit_tender"><button type="button" name="edit" class="btn btn-success">edit</button></a>
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_tender{{tender["_id"]}}">Delete</button>
+        <a href="/edit_tender/{{tender['_id']}}" id="edit_tender"><button type="button" name="edit" class="btn btn-success">Edit</button></a>
+        <button type="button" class="btn btn-danger" id="delete tender" data-toggle="modal" data-target="#delete_tender{{tender["_id"]}}">Delete</button>
 
         {% endif %}
       </div>

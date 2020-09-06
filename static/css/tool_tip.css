@@ -75,3 +75,42 @@ input#datepicker {
   word-wrap: break-word;
   z-index: 9999;
 }
+
+/* item deatils while ranking */
+.imgDetailsPos{
+
+  position: relative;
+  left: 1px;
+  bottom: 1px;
+  white-space: pre;
+}
+
+.item_hover {
+  display: inline-block;
+  line-height: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+img.moveCursor{
+
+  margin-right: 20px;
+  position: relative;
+  right: 30px;
+}
+
+[item_toolTip_details]:hover:after{
+  border-radius: 5px;
+  width: 140px;
+  height: 30px;
+  font-size: 15px;
+  content: attr(item_toolTip_details);
+  margin-bottom: 10px;
+  top: 80px;
+  left: 68px;
+  padding: 8px 20px 8px 20px;
+  position: absolute;
+  word-wrap: break-word;
+  z-index: 9999;
+}

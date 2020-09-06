@@ -3,7 +3,7 @@
 {% block css %}
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/city.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/fields.css') }}">
 
 {% endblock %}
 
@@ -12,7 +12,8 @@
 
 <div class="container">
   <div class="alert alert-secondary" role="alert">
-    <h1>Welcome to Registration page!</h1>
+    <h1>Welcome to Registration page</h1>
+    <p> Please register in order to participate in the exchanging processes</p>
   </div>
 
   <form action="/register/" method="post" onsubmit="return checkValidation({{allEmails}})">

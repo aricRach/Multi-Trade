@@ -4,7 +4,7 @@
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/zoom.css') }}">
 {% endblock %}
 
-{% block title %} {{login_user['firstName']}}'s tender {% endblock %}
+{% block title %} {{current_tender['name']}} {% endblock %}
 
 {% block hello %} {{login_user['firstName']}} {% endblock %}
 {% block content %}
@@ -33,7 +33,7 @@
 
     {% if login_user["email"] == current_tender["owner"]%}
     <p></p>
-    <a href="/edit_tender/{{current_tender["_id"]}}/"><button type="button" class="btn btn-success">Edit</button></a>
+    <a href="/edit_tender/{{current_tender["_id"]}}/"><button type="button" class="btn btn-success" id="edit tender" >Edit</button></a>
 
     {% endif %}
 
@@ -55,7 +55,7 @@
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAoklEQVR42mNgmGnMQAZ2AOKZQPwAimdCxRBqyDT0DBD/R8NnUAwnw+CZWAyF4ZmUGPwAj8EPBp3BzkB
           8mdSgwBfTMkC8EsmAW8RGHq6YPgu14DOUD6IrgNiF2OSGL6ZheDUQyxEdbEREyCcgdiU5kkmKaTIMxhcUlylxMa7Iu0VpGONKbqDYL6ckVRDCZKdjmua84VkI0bQ8plkNQrM6jygMAPbbJ6MGdtX+AAAAAElFTkSuQmCC" border="0" height="22" width="22" data-atf="1"></button>
 
-
+<!-- favorite button -->
       {% if current_tender["_id"]|string in login_user["favoritesTenders"] %}
       <a href="/add_favorite/{{current_tender['_id']}}/" class="favButton"><i class="fas fa-heart" style="font-size:30px;"></i></a>
 
@@ -82,9 +82,7 @@
 
             {{ itemDesc(item, login_user) }}
 
-            <!--Adds a border around an element -->
             <div class="caption">
-              <!--Adds a caption text inside-->
               <h6>{{item["name"]}}</h6>
             </div>
           </div>

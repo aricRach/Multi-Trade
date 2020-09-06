@@ -13,7 +13,7 @@ var check = function() {
   }
 }
 
-function checkEmailExist(allEmails) {
+function checkEmailExist(allEmails) { // if email exist it will be error
 
   // change border color to black after clicking on the red box(after failed)
     document.getElementById('input email').onclick = function(){
@@ -23,7 +23,7 @@ function checkEmailExist(allEmails) {
     var email = document.getElementById("input email").value;
      for(var i=0;i<allEmails.length;i++){
      if(email == allEmails[i]){
-       alert("email already exist");
+       // alert("email already exist");
        document.getElementById("input email").style.borderColor = "red";
        return false; // email already exist
      }
@@ -44,11 +44,29 @@ var checkValidation = function(allEmails) {
   if (val1 == val2 && val1.length >= 6) {
     return checkEmailExist(allEmails);
   } else {
-    alert("passwords not matching")
+    // alert("passwords not matching")
     document.getElementById("confirm password").style.borderColor = "red";
     return false;
   }
 }
+
+
+function checkEmailNotExist(allEmails) { // if email not exist it will be error
+
+  // change border color to black after clicking on the red box(after failed)
+    document.getElementById('input email').onclick = function(){
+    document.getElementById("input email").style.borderColor = "black";
+}
+
+  var email = document.getElementById("input email").value;
+   for(var i=0;i<allEmails.length;i++){
+   if(email == allEmails[i]){
+     return true; // email already exist
+   }
+ }
+ document.getElementById("input email").style.borderColor = "red";
+ return false;
+ }
 
 function isNumber(evt) {
     evt = (evt) ? evt : window.event;

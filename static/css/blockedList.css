@@ -69,8 +69,10 @@ button {
 @media screen and (min-width: 800px) {
   .blockedList {
     position: relative;
-    left: 400px;
+    left: 320px;
     max-width: 0px;
+    top: -100px;
+
   }
 }
 

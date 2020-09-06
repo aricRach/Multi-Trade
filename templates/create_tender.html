@@ -10,7 +10,7 @@
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/private_tender.css') }}">
 
 {% endblock %}
-{% block title %} {{fn}}'s collection {% endblock %}
+{% block title %} Create new tender {% endblock %}
 
 {% block hello %} {{fn}} {% endblock %}
 {% block content %}
@@ -21,9 +21,9 @@
   <div class="jumbotron">
 
     <h1>Create a new tender</h1>
-    <p>here you can create you own tender </p>
-    <p>you can decide which type of tender and how many paricipants you wants</p>
-    <p>in addition you can choose if the tender will be public or private and then send a link to the users you want to participant with</p>
+    <p>Here you can create you own tender </p>
+    <p>Choose the last day for joining, after that date the ranking items process will be available for the number of days you will choose</p>
+    <p>If you choose the tender to be private, Send the link to people you want to participate in the tender </p>
   </div>
 
 
@@ -63,7 +63,7 @@
         <input type="password" id="passBox" name="pass" />
       </div>
       <br>
-      <button type="submit" class="btn btn-primary">Create!</button>
+      <button type="submit" id="create tender" class="btn btn-primary">Create</button>
 
     </form>
   </div>

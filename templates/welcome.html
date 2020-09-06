@@ -4,7 +4,8 @@
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/home.css') }}">
 {% endblock %}
 
-{% block title %} welcome {% endblock %}
+{% block title %} MultiTrade {% endblock %}
+
 {% block content %}
 
 {% from 'macros.html' import flashMessage %}
@@ -14,9 +15,8 @@
 <div class="container">
 
   <div class="jumbotron">
-
-    <h1>Welcome to MultiTrade site</h1>
-    <p>here you can find a lot of items you may want and exchange it with Useless items for you</p>
+    <h1>Welcome to MultiTrade</h1>
+    <p>Here you can find a lot of items you may want to exchange for items that are more valuable for you</p>
     <p>so that you will always be Satisfied because you can't lose your item to a less good item for you</p>
 
   </div>
@@ -26,7 +26,7 @@
       <form action="/" method="post" class="form-inline">
         <div class="form-group">
           <input type="text" name="search" placeholder="search.." class="form-control">
-          <button type="submit" style="margin:8px;" class="btn btn-primary"> Search <i class="fa fa-search" aria-hidden="true"></i></button>
+          <button type="submit" style="margin:8px;" class="btn btn-primary searchBtn"> Search <i class="fa fa-search" aria-hidden="true"></i></button>
         </div>
       </form>
     </p>
@@ -45,7 +45,6 @@
 
       <div class="scrollBar">
         <div class="card-body">
-          <!-- <div class="ex3"> -->
           <div class="col-xl-12 col-lg-10 col-md-7 col-sm-5 col-5 ">
             <div class="list list-row card" id="sortable" data-sortable-id="0" aria-dropeffect="move">
               <div class="tab-content mt-3">
@@ -78,6 +77,7 @@
 
                 </div>
 
+                <!-- show all tenders tab as default -->
                 <script type="text/javascript">
                   $('#bologna-list a').on('click', function(e) {
                     e.preventDefault()

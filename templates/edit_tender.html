@@ -10,7 +10,7 @@
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/tool_tip.css') }}">
 
 {% endblock %}
-{% block title %} edit tender {% endblock %}
+{% block title %} Edit tender {% endblock %}
 
 {% block hello %} {{login_user["firstName"]}} {% endblock %}
 {% block content %}
@@ -85,7 +85,7 @@
       </div>
 
       <br>
-      <button type="submit" class="btn btn-primary">Edit</button> <br>
+      <button type="submit" class="btn btn-primary" id="edit tender submit">Edit</button> <br>
   </div>
 </div>
 </form>

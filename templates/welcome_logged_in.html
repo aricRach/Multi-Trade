@@ -4,9 +4,10 @@
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/home.css') }}">
 {% endblock %}
 
-{% block title %} welcome logged in page {% endblock %}
+{% block title %} MultiTrade {% endblock %}
 
 {% block hello %} {{login_user["firstName"]}} {% endblock %}
+
 {% block content %}
 
 {% from 'macros.html' import flashMessage %}
@@ -17,7 +18,7 @@
 
   <div class="jumbotron">
     <h1>Welcome to MultiTrade site</h1>
-    <p>here you can find a lot of items you may want and exchange it with Useless items for you</p>
+    <p>Here you can find a lot of items you may want to exchange for items that are more valuable for you</p>
     <p>so that you will always be Satisfied because you can't lose your item to a less good item for you</p>
 
     <h1> hello {{login_user["firstName"]}} </h1>
@@ -29,7 +30,7 @@
       <form action="/" method="post" class="form-inline">
         <div class="form-group">
           <input type="text" name="search" placeholder="search.." class="form-control">
-          <button type="submit" style="margin:8px;" class="btn btn-primary"> Search <i class="fa fa-search" aria-hidden="true"></i></button>
+          <button type="submit" style="margin:8px;" class="btn btn-primary searchBtn"> Search <i class="fa fa-search" aria-hidden="true"></i></button>
         </div>
       </form>
     </p>
@@ -97,7 +98,7 @@
                   </div>
 
                   {% for tender in tenders_id %}
-                  {% if (tender["_id"]) in login_user["favoritesTenders"] and not tender["results"] %}
+                  {% if tender["_id"]|string in login_user["favoritesTenders"] and not tender["results"] %}
 
                   <div class="list-item" data-id="15" data-item-sortable-id="0" draggable="true" role="option" aria-grabbed="true" style="">
                     <div><a href="/out_of_tender/{{tender['_id']}}" data-abc="true"><span class="w-40 avatar gd-primary">P</span></a></div>
@@ -124,7 +125,7 @@
                   </div>
 
                   {% for tender in tenders_id %}
-                  {% if login_user['email'] in tender["participants"] and not tender["results"] %}
+                  {% if login_user['email'] in tender["participants"] and not tender["results"] and tender["participants"]|length > 1 %}
 
                   <div class="list-item" data-id="15" data-item-sortable-id="0" draggable="true" role="option" aria-grabbed="true" style="">
                     <div><a href="/out_of_tender/{{tender['_id']}}" data-abc="true"><span class="w-40 avatar gd-primary">P</span></a></div>
@@ -144,6 +145,7 @@
 
                 </div>
 
+                <!-- show all tenders tab as default -->
                 <script type="text/javascript">
                   $('#bologna-list a').on('click', function(e) {
                     e.preventDefault()

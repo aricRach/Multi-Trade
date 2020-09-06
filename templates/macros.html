@@ -20,10 +20,7 @@
         <input dir="ltr" id="current url" title="Share url" type="text" value="" readonly="true" style="width: 300px;">
 
         <button type="submit" class="btn btn-primary" id="copy" onclick="copyClipboard()">Copy
-          <img
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAAALVBMVEX///////////////////////////////////////////////////////////
-            +g0jAFAAAAD3RSTlMAQBDg/1CgwNCwcDCAIGAmUhdqAAAAe0lEQVR4AWNAAaOAURAZKGDKm7ggA1cMBWwuKMAdQwE7qgI3LAo8ypHAJCwKHFH4NFLAVY4MyjZgKBBB9UkBhoIjqAocyFGQiIgNEawKDiAEWEYVjCoYVcDm4otfAVN6AKYCNEAfBciAHAVPUBUYYCjgRJF3DmCgKhgFAJ+6k34iTgalAAAAAElFTkSuQmCC"
-            border="0" width="25px" height="25px"> </button>
+          <i class="far fa-copy"></i> </button> 
 
       </div>
     </div>
@@ -127,7 +124,7 @@
 
           {% if item['owner'] != login_user['email'] %}
           <div class="card-header">
-          <p class="card-text" style="width:250px" >owner email: {{item['owner']}} </p>
+          <p class="card-text" style="width:300px" >owner email: {{item['owner']}} </p>
           </div>
           {% endif %}
         <p class="card-text">{{item['details']}}</p>
@@ -158,7 +155,7 @@
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 
         <form action="/delete_tender/{{tender['_id']}}/">
-          <input type="submit" value="Delete" class="btn btn-danger">
+          <input type="submit" value="Delete" id="delete permanently" class="btn btn-danger">
         </form>
       </div>
     </div>
@@ -191,7 +188,7 @@
             <div class="container">
               <br>
 
-              <a href="/item_added_to_tender/{{current_tender['_id']}}/{{item['_id']}}/"><img src="/return-file/{{item['image']}}" class="zoomable" width="90" height="90" alt="None"></a>
+              <a href="/item_added_to_tender/{{current_tender['_id']}}/{{item['_id']}}/"><img src="/return-file/{{item['image']}}" id="clickable image" class="zoomable" width="90" height="90" alt="None"></a>
 
 
               <!--Adds a border around an element -->
@@ -256,7 +253,7 @@
   $(document).ready(function () {
   setTimeout(function () {
       $("div:visible[id*='msg']").fadeOut();
-}, 800);
+}, 1000);
 });
 </script>
 
