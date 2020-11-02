@@ -1,7 +1,6 @@
 <p align="center">
-  <img src="https://imgur.com/CdF34Ce.png">
+  <img src="https://imgur.com/P4MRLZZ.png">
 </p>
-
 
 # MultiTrade Site 
 
